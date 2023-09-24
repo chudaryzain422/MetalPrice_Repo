@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_partner_form_inherit" model="ir.ui.view">
+        <field name="name">res.partner.form.inherit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <div name="button_box" position="inside">
+                <button class="oe_stat_button" type="object" name="action_view_invoice"
+                        icon="fa-cube" >
+                        <field string="Quantity" name="billed_weight_quantity" widget="statinfo"/>
+                    </button>
+<!--                attrs="{'invisible': [('invoice_count', '=', 0)]}"-->
+            </div>
+        </field>
+    </record>
+
+</odoo>

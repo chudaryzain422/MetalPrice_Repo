@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="metal_price_form_view" model="ir.ui.view">
+            <field name="name">metal.price.wizard.view.form</field>
+            <field name="model">metal.price.wizard</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="metal_price" />
+                            </group>
+                            <group>
+                                <field name="date" />
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="wizard_metal_price_action" model="ir.actions.act_window">
+            <field name="name">Metal Price</field>
+            <field name="res_model">metal.price.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+        <menuitem id="menu_metal_price_wizard"
+          parent="account.menu_finance"
+          action="wizard_metal_price_action"/>
+    </data>
+</odoo>

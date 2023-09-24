@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id='account_move_form_inherited_view' model="ir.ui.view">
+        <field name="name">account.move.form.view.inherit</field>
+        <field name='model'>account.move</field>
+        <field name='inherit_id' ref="account.view_move_form"/>
+        <field name='arch' type='xml'>
+            <field name="partner_id" position="after">
+                <field name="today_metal_price"/>
+            </field>
+
+
+            <xpath expr="//page/field[@name='invoice_line_ids']/tree/field[@name='price_unit']" position="after">
+                <field name="metal_total" attrs="{'readonly': [('product_uom_category_id', '!=', 2)]}"/>
+            </xpath>
+
+        </field>
+    </record>
+
+</odoo>
